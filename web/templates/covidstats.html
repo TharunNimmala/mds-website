@@ -1,0 +1,444 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+<title>Australia - COVID-19 Stats</title>
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fontawesome -->
+<link type="text/css" href="{% static 'vendor/@fortawesome/fontawesome-free/css/all.min.css' %}"  rel="stylesheet">
+
+<!-- Sweet Alert -->
+<link type="text/css" href="{% static 'vendor/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet">
+
+
+<!-- Volt CSS -->
+<link type="text/css" href="{% static 'css/volt.css' %}" rel="stylesheet">
+
+<!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+
+</head>
+
+<body>
+
+    
+    
+                {% include 'nav.html' %}
+    
+        <main class="content">
+
+    
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+                <div class="d-block mb-4 mb-md-0">
+                    
+                </div>
+                <div style="color: hsl(250deg 18% 41%)">
+                    Served From <strong>{{hostname}}</strong>
+                </div>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-primary">Share</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary">Export</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-settings mb-4">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col col-md-6 col-lg-3 col-xl-4">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon2"><span class="fas fa-search"></span></span>
+                            <input type="text" class="form-control" id="exampleInputIconLeft" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 col-xl-1 ps-md-0 text-right">
+                        <div class="btn-group">
+                            <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="icon icon-sm icon-gray pt-1">
+                                    <span class="fas fa-cog"></span>
+                                </span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end pb-0">
+                                <span class="small ps-3 fw-bold text-dark">Show</span>
+                                <a class="dropdown-item d-flex fw-bold" href="#">10 <span class="icon icon-small ms-auto"><span class="fas fa-check"></span></span></a>
+                                <a class="dropdown-item fw-bold" href="#">20</a>
+                                <a class="dropdown-item fw-bold" href="#">30</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-body shadow-sm table-wrapper table-responsive">
+                <div id="container_australia" class="container--wrap bg-navy-4 table-container col hide-mobile" region="australia">
+                    <div class="sorted-table__header">
+                      <div class="sorted-table__container">
+                        <h2><a class="header-link" href="/data/australia">Australia COVID-19 Stats</a><img class="loader" src="https://i.imgur.com/5jbfsSV.gif" width="30px;" alt="" style="margin-left: 10px; filter: brightness(1.4) hue-rotate(360deg) saturate(20); display: none;"></h2>
+                      </div>
+                    </div>
+                    <div id="sortable_table_australia_wrapper" class="dataTables_wrapper no-footer"><div id="sortable_table_australia_filter" class="dataTables_filter"><label><input type="search" class="" placeholder="search data" aria-controls="sortable_table_australia"></label></div><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 1153.42px; padding-right: 10px;"><table class="display responsive dataTable no-footer" style="margin-left: 0px; width: 1153.42px;" role="grid"><thead>
+                        <tr role="row"><th class="text--gray sorting" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 217.788px;" aria-label="Name: activate to sort column ascending">Name</th><th class="text--gray text--green sorting_desc" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 76.3355px;" aria-sort="descending" aria-label="Confirmed: activate to sort column ascending">Confirmed</th><th class="text--gray text--green sorting" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 81.4637px;" aria-label="Per Million: activate to sort column ascending">Per Million</th><th class="text--gray text--red sorting" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 65.6517px;" aria-label="Deceased: activate to sort column ascending">Deceased</th><th class="text--gray text--red sorting" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 81.4637px;" aria-label="Per Million: activate to sort column ascending">Per Million</th><th class="text--gray text--amber sorting" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 92.5748px;" aria-label="Tests: activate to sort column ascending">Tests</th><th class="text--gray text--yellow sorting" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 87.8739px;" aria-label="Active: activate to sort column ascending">Active</th><th class="text--gray text--blue sorting" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 74.6261px;" aria-label="Recovered: activate to sort column ascending">Recovered</th><th class="text--gray text--blue sorting" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 81.891px;" aria-label="Per Million: activate to sort column ascending">Per Million</th><th class="text--gray text--cyan sorting" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 87.8739px;" aria-label="Vaccinated: activate to sort column ascending">Vaccinated</th><th class="text--gray text--cyan sorting" tabindex="0" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 95.9936px;" aria-label="Population: activate to sort column ascending">Population</th></tr>
+                      </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 370px; width: 100%;"><table id="sortable_table_australia" class="display responsive dataTable no-footer" style="width: 100%;" role="grid"><thead>
+                        <tr role="row" style="height: 0px;"><th class="text--gray sorting" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 217.788px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Name: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Name</div></th><th class="text--gray text--green sorting_desc" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 76.3355px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="descending" aria-label="Confirmed: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Confirmed</div></th><th class="text--gray text--green sorting" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 81.4637px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Per Million: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Per Million</div></th><th class="text--gray text--red sorting" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 65.6517px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Deceased: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Deceased</div></th><th class="text--gray text--red sorting" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 81.4637px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Per Million: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Per Million</div></th><th class="text--gray text--amber sorting" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 92.5748px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Tests: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Tests</div></th><th class="text--gray text--yellow sorting" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 87.8739px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Active: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Active</div></th><th class="text--gray text--blue sorting" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 74.6261px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Recovered: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Recovered</div></th><th class="text--gray text--blue sorting" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 81.891px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Per Million: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Per Million</div></th><th class="text--gray text--cyan sorting" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 87.8739px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Vaccinated: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Vaccinated</div></th><th class="text--gray text--cyan sorting" aria-controls="sortable_table_australia" rowspan="1" colspan="1" style="width: 95.9936px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Population: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Population</div></th></tr>
+                      </thead>
+                      
+                      <tbody>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                      <tr role="row" class="odd">
+                          <td class="text--gray text--gray">TOTAL</td>
+                          <td class="text--green text--green sorting_1" data-order="29838"><div class="flex flex-dir-col">
+                              <span>29,838</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--green text--green" data-order="1193.011490782169">1,193.011</td>
+                          <td class="text--red text--red" data-order="910"><div class="flex flex-dir-col">
+                              <span>910</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--red text--red" data-order="36.38449147435397">36.384</td>
+                          <td class="text--amber text--amber" data-order="16910269"><div class="flex flex-dir-col">
+                              <span>16,910,269</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--yellow text--yellow" data-order="2321">2,321</td>
+                          <td class="text--blue text--blue" data-order="28655"><div class="flex flex-dir-col">
+                              <span>28,655</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--blue text--blue" data-order="1145.7116518655089">1,145.712</td>
+                          <td class="text--blue text--cyan" data-order="-1">Unknown</td>
+                          <td class="text--blue text--cyan" data-order="25010656" style="">25,010,656</td>
+                        </tr><tr role="row" class="even">
+                          <td class="text--gray text--gray"><div class="flex" style="font-size:16px;">
+                              
+                                <span class="save-button" data-status="unselected" data-type="state" data-name="Victoria">★</span>
+                              
+                              <span>
+                                
+                                  Victoria
+                                
+                              </span>
+                            </div></td>
+                  
+                          <td class="text--green text--green sorting_1" data-order="20522"><div class="flex flex-dir-col">
+                              <span>20,522</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                  
+                          <td class="text--green text--green" data-order="3071.86">3,071.86</td>
+                          <td class="text--red text--red" data-order="820"><div class="flex flex-dir-col">
+                              <span>820</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--red text--red" data-order="122.74">122.74</td>
+                          <td class="text--amber text--amber" data-order="5837202"><div class="flex flex-dir-col">
+                              <span>5,837,202</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--yellow text--yellow" data-order="-1">Unknown</td>
+                          <td class="text--blue text--blue" data-order="19679"><div class="flex flex-dir-col">
+                              <span>19,679</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--blue text--blue" data-order="2945.67">2,945.67</td>
+                          <td class="text--blue text--cyan" data-order="-1">Unknown</td>
+                          <td class="text--blue text--cyan" data-order="6680648" style="">6,680,648</td>
+                        </tr><tr role="row" class="odd">
+                          <td class="text--gray text--gray"><div class="flex" style="font-size:16px;">
+                              
+                                <span class="save-button" data-status="unselected" data-type="state" data-name="New South Wales">★</span>
+                              
+                              <span>
+                                
+                                  New South Wales
+                                
+                              </span>
+                            </div></td>
+                  
+                          <td class="text--green text--green sorting_1" data-order="5484"><div class="flex flex-dir-col">
+                              <span>5,484</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                  
+                          <td class="text--green text--green" data-order="671.53">671.53</td>
+                          <td class="text--red text--red" data-order="54"><div class="flex flex-dir-col">
+                              <span>54</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--red text--red" data-order="6.61">6.61</td>
+                          <td class="text--amber text--amber" data-order="5666557"><div class="flex flex-dir-col">
+                              <span>5,666,557</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--yellow text--yellow" data-order="-1">Unknown</td>
+                          <td class="text--blue text--blue" data-order="3278"><div class="flex flex-dir-col">
+                              <span>3,278</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--blue text--blue" data-order="401.40">401.40</td>
+                          <td class="text--blue text--cyan" data-order="-1">Unknown</td>
+                          <td class="text--blue text--cyan" data-order="8166369" style="">8,166,369</td>
+                        </tr><tr role="row" class="even">
+                          <td class="text--gray text--gray"><div class="flex" style="font-size:16px;">
+                              
+                                <span class="save-button" data-status="unselected" data-type="state" data-name="Queensland">★</span>
+                              
+                              <span>
+                                
+                                  Queensland
+                                
+                              </span>
+                            </div></td>
+                  
+                          <td class="text--green text--green sorting_1" data-order="1564"><div class="flex flex-dir-col">
+                              <span>1,564</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                  
+                          <td class="text--green text--green" data-order="301.65">301.65</td>
+                          <td class="text--red text--red" data-order="7"><div class="flex flex-dir-col">
+                              <span>7</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--red text--red" data-order="1.35">1.35</td>
+                          <td class="text--amber text--amber" data-order="2468776"><div class="flex flex-dir-col">
+                              <span>2,468,776</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--yellow text--yellow" data-order="-1">Unknown</td>
+                          <td class="text--blue text--blue" data-order="1511"><div class="flex flex-dir-col">
+                              <span>1,511</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--blue text--blue" data-order="291.43">291.43</td>
+                          <td class="text--blue text--cyan" data-order="-1">Unknown</td>
+                          <td class="text--blue text--cyan" data-order="5184847" style="">5,184,847</td>
+                        </tr><tr role="row" class="odd">
+                          <td class="text--gray text--gray"><div class="flex" style="font-size:16px;">
+                              
+                                <span class="save-button" data-status="unselected" data-type="state" data-name="Western Australia">★</span>
+                              
+                              <span>
+                                
+                                  Western Australia
+                                
+                              </span>
+                            </div></td>
+                  
+                          <td class="text--green text--green sorting_1" data-order="1005"><div class="flex flex-dir-col">
+                              <span>1,005</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                  
+                          <td class="text--green text--green" data-order="376.81">376.81</td>
+                          <td class="text--red text--red" data-order="9"><div class="flex flex-dir-col">
+                              <span>9</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--red text--red" data-order="3.37">3.37</td>
+                          <td class="text--amber text--amber" data-order="1067992"><div class="flex flex-dir-col">
+                              <span>1,067,992</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--yellow text--yellow" data-order="-1">Unknown</td>
+                          <td class="text--blue text--blue" data-order="970"><div class="flex flex-dir-col">
+                              <span>970</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--blue text--blue" data-order="363.69">363.69</td>
+                          <td class="text--blue text--cyan" data-order="-1">Unknown</td>
+                          <td class="text--blue text--cyan" data-order="2667130" style="">2,667,130</td>
+                        </tr><tr role="row" class="even">
+                          <td class="text--gray text--gray"><div class="flex" style="font-size:16px;">
+                              
+                                <span class="save-button" data-status="unselected" data-type="state" data-name="South Australia">★</span>
+                              
+                              <span>
+                                
+                                  South Australia
+                                
+                              </span>
+                            </div></td>
+                  
+                          <td class="text--green text--green sorting_1" data-order="727"><div class="flex flex-dir-col">
+                              <span>727</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                  
+                          <td class="text--green text--green" data-order="410.60">410.60</td>
+                          <td class="text--red text--red" data-order="4"><div class="flex flex-dir-col">
+                              <span>4</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--red text--red" data-order="2.26">2.26</td>
+                          <td class="text--amber text--amber" data-order="1275190"><div class="flex flex-dir-col">
+                              <span>1,275,190</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--yellow text--yellow" data-order="-1">Unknown</td>
+                          <td class="text--blue text--blue" data-order="690"><div class="flex flex-dir-col">
+                              <span>690</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--blue text--blue" data-order="389.70">389.70</td>
+                          <td class="text--blue text--cyan" data-order="-1">Unknown</td>
+                          <td class="text--blue text--cyan" data-order="1770591" style="">1,770,591</td>
+                        </tr><tr role="row" class="odd">
+                          <td class="text--gray text--gray"><div class="flex" style="font-size:16px;">
+                              
+                                <span class="save-button" data-status="unselected" data-type="state" data-name="Tasmania">★</span>
+                              
+                              <span>
+                                
+                                  Tasmania
+                                
+                              </span>
+                            </div></td>
+                  
+                          <td class="text--green text--green sorting_1" data-order="234"><div class="flex flex-dir-col">
+                              <span>234</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                  
+                          <td class="text--green text--green" data-order="0.00">0.00</td>
+                          <td class="text--red text--red" data-order="13"><div class="flex flex-dir-col">
+                              <span>13</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--red text--red" data-order="0.00">0.00</td>
+                          <td class="text--amber text--amber" data-order="212503"><div class="flex flex-dir-col">
+                              <span>212,503</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--yellow text--yellow" data-order="-1">Unknown</td>
+                          <td class="text--blue text--blue" data-order="221"><div class="flex flex-dir-col">
+                              <span>221</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--blue text--blue" data-order="0.00">0.00</td>
+                          <td class="text--blue text--cyan" data-order="-1">Unknown</td>
+                          <td class="text--blue text--cyan" data-order="541071" style="">541,071</td>
+                        </tr><tr role="row" class="even">
+                          <td class="text--gray text--gray"><div class="flex" style="font-size:16px;">
+                              
+                                <span class="save-button" data-status="unselected" data-type="state" data-name="Northern Territory">★</span>
+                              
+                              <span>
+                                
+                                  Northern Territory
+                                
+                              </span>
+                            </div></td>
+                  
+                          <td class="text--green text--green sorting_1" data-order="166"><div class="flex flex-dir-col">
+                              <span>166</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                  
+                          <td class="text--green text--green" data-order="0.00">0.00</td>
+                          <td class="text--red text--red" data-order="0"><div class="flex flex-dir-col">
+                              <span>0</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--red text--red" data-order="0.00">0.00</td>
+                          <td class="text--amber text--amber" data-order="178859"><div class="flex flex-dir-col">
+                              <span>178,859</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--yellow text--yellow" data-order="-1">Unknown</td>
+                          <td class="text--blue text--blue" data-order="125"><div class="flex flex-dir-col">
+                              <span>125</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--blue text--blue" data-order="0.00">0.00</td>
+                          <td class="text--blue text--cyan" data-order="-1">Unknown</td>
+                          <td class="text--blue text--cyan" data-order="-1" style="">Unknown</td>
+                        </tr><tr role="row" class="odd">
+                          <td class="text--gray text--gray"><div class="flex" style="font-size:16px;">
+                              
+                                <span class="save-button" data-status="unselected" data-type="state" data-name="Australian Capital Territory">★</span>
+                              
+                              <span>
+                                
+                                  Australian Capital Territory
+                                
+                              </span>
+                            </div></td>
+                  
+                          <td class="text--green text--green sorting_1" data-order="124"><div class="flex flex-dir-col">
+                              <span>124</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                  
+                          <td class="text--green text--green" data-order="0.00">0.00</td>
+                          <td class="text--red text--red" data-order="3"><div class="flex flex-dir-col">
+                              <span>3</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--red text--red" data-order="0.00">0.00</td>
+                          <td class="text--amber text--amber" data-order="200072"><div class="flex flex-dir-col">
+                              <span>200,072</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--yellow text--yellow" data-order="-1">Unknown</td>
+                          <td class="text--blue text--blue" data-order="120"><div class="flex flex-dir-col">
+                              <span>120</span>
+                              <span style="font-size:12px"></span>
+                            </div></td>
+                          <td class="text--blue text--blue" data-order="0.00">0.00</td>
+                          <td class="text--blue text--cyan" data-order="-1">Unknown</td>
+                          <td class="text--blue text--cyan" data-order="-1" style="">Unknown</td>
+                        </tr></tbody>
+                    </table></div></div></div>
+                  </div>
+                
+            
+        </main>
+
+    <!-- Core -->
+    <script src="{% static 'vendor/@popperjs/core/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    
+    <!-- Charts -->
+    <script src="{% static 'vendor/chartist/dist/chartist.min.js' %}"></script>
+    <script src="{% static 'vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js' %}"></script>
+    
+    
+    
+    <!-- Sweet Alerts 2 -->
+    <script src="{% static 'vendor/sweetalert2/dist/sweetalert2.all.min.js' %}"></script>
+    
+    
+    
+    <script src="{% static 'assets/js/volt.js' %}"></script>
+    
+        
+</body>
+
+</html>
